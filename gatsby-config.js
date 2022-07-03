@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `agenct`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `agency`,
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: ["gatsby-plugin-sass"],
 };

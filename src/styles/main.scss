@@ -1,0 +1,99 @@
+@import "./breakpoints";
+@import "./variables";
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+  font-family: $font;
+  background-color: $black;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100vh;
+}
+span {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+.menu {
+  &-toggle {
+    font-family: $font;
+    text-transform: uppercase;
+    z-index: 99;
+    position: absolute;
+    border: none;
+    background: none;
+    top: 5px;
+    left: 5px;
+    padding: 3rem;
+    cursor: pointer;
+    color: $white;
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+}
+// GUIDING LINES
+.line {
+  position: relative;
+  width: 1px;
+  background-color: $white;
+  &-2 {
+    grid-row: 8/13;
+    grid-column: 9;
+  }
+  &-3 {
+    grid-row: 1/3;
+    grid-column: 9;
+  }
+  &-4 {
+    grid-row: 6/13;
+    grid-column: 4;
+  }
+}
+.scroll {
+  font-weight: 300;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+}
+.outline-heading {
+  font-size: 6.2rem;
+  -webkit-text-stroke: 0.1px $green;
+  color: transparent;
+  line-height: 6rem;
+  margin: 10px 0;
+  &--1 {
+    grid-column: 2/12;
+    grid-row: 5;
+  }
+  &--2 {
+    grid-row: 3;
+    grid-column: 2/12;
+  }
+}
+.text-container {
+  &--1 {
+    grid-row: 6;
+    grid-column: 2/12;
+  }
+  &--2 {
+    grid-row: 4;
+    grid-column: 2/12;
+  }
+}
+.space {
+  margin: 0 3px;
+  @media (min-width: $small) {
+    margin: 0 8px;
+  }
+}
