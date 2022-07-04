@@ -22,33 +22,39 @@ body {
 }
 span {
   display: inline-block;
+  // font-weight: 300;
+  // font-size: 2.2rem;
+}
+.span {
   font-weight: 300;
   font-size: 2.2rem;
 }
-.menu {
-  &-toggle {
-    font-family: $font;
-    text-transform: uppercase;
-    z-index: 99;
-    position: absolute;
-    border: none;
-    background: none;
-    top: 5px;
-    left: 5px;
-    padding: 3rem;
-    cursor: pointer;
-    color: $white;
-    font-size: 2.2rem;
-    font-weight: 300;
+
+.nav {
+  background-color: $black;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  .links-container {
+    height: 57px;
+    width: 100%;
+  }
+  .progress-bar {
+    width: 0px;
+    height: 3px;
+    background-color: $green;
   }
 }
+
 // GUIDING LINES
 .line {
   position: relative;
   width: 1px;
   background-color: $white;
   &-2 {
-    grid-row: 10/13;
+    grid-row: 11/13;
     grid-column: 9;
   }
   &-3 {
@@ -74,6 +80,9 @@ span {
   top: -40px;
   left: -20px;
 }
+.hide {
+  display: none;
+}
 .outline-heading {
   font-size: 6.2rem;
   -webkit-text-stroke: 0.1px $green;
@@ -87,6 +96,20 @@ span {
   &--2 {
     grid-row: 3;
     grid-column: 2/12;
+  }
+}
+.title {
+  &-container {
+    line-height: 6rem;
+    font-size: 6.2rem;
+    -webkit-text-stroke: 2px $green;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    &--1 {
+      grid-column: 2/12;
+      grid-row: 5;
+    }
   }
 }
 .text-container {

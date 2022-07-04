@@ -25,7 +25,7 @@ const AnimatedLetters = ({ title }) => {
       {[...title].map((letter) => {
         id++;
         if (letter === " ") {
-          return <span className="space" key={id}></span>;
+          return <br />;
         } else {
           return (
             <motion.span key={id} variants={letterAnimation}>
