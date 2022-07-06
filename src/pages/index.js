@@ -18,17 +18,18 @@ const scroll = {
 const titleParent = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
 const titleChild = {
-  initial: { y: 800 },
+  initial: { y: 200, opacity: 0 },
   animate: {
     y: 0,
+    opacity: 1,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 0.2,
+      duration: 1,
     },
   },
 };
@@ -43,23 +44,32 @@ const IndexPage = () => {
               scroll
             </motion.p>
           </div>
-          <div className="title-container title-container--1">
-            <div className="title-line">Reklama</div>
-            <div className="title-line">to za</div>
-            <div className="title-line">mało.</div>
-          </div>
         </section>
         <section className="section">
           <div className="line line-3"></div>
-          <h2 className="outline-heading outline-heading--2">
-            Chcesz wiedzieć czemu?
-          </h2>
+          <motion.div
+            viewport={{ once: true }}
+            variants={titleParent}
+            initial="initial"
+            whileInView="animate"
+            className="title-container title-container--2"
+          >
+            <motion.div variants={titleChild} className="title-line">
+              Reklama
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              to za
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              mało.
+            </motion.div>
+          </motion.div>
           <div className="text-container text-container--2">
             <motion.span
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               className="span"
             >
               W obecnych czasach każdy w bardzo łatwy i tani sposób jest w
@@ -71,15 +81,29 @@ const IndexPage = () => {
         </section>
         <section className="section">
           <div className="line line-5"></div>
-          <h2 className="outline-heading outline-heading--2">
-            Czas się wyróżnić.
-          </h2>
+          <motion.div
+            viewport={{ once: true }}
+            variants={titleParent}
+            initial="initial"
+            whileInView="animate"
+            className="title-container title-container--2"
+          >
+            <motion.div variants={titleChild} className="title-line">
+              Reklama
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              to za
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              mało.
+            </motion.div>
+          </motion.div>
           <div className="text-container text-container--2">
             <motion.span
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               className="span"
             >
               Aby ludzie chcieli korzystać z twoich usług, twój produkt musi być
@@ -96,15 +120,29 @@ const IndexPage = () => {
         </section>
         <section className="section">
           <div className="line line-3"></div>
-          <h2 className="outline-heading outline-heading--2">
-            Czas przestać prosić.
-          </h2>
+          <motion.div
+            viewport={{ once: true }}
+            variants={titleParent}
+            initial="initial"
+            whileInView="animate"
+            className="title-container title-container--2"
+          >
+            <motion.div variants={titleChild} className="title-line">
+              Reklama
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              to za
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              mało.
+            </motion.div>
+          </motion.div>
           <div className="text-container text-container--2">
             <motion.span
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               className="span"
             >
               Nikt nie jest w stanie stworzyć usługi dla wszystkich. Zamiast
