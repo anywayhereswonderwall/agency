@@ -1,7 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
 import "../styles/main.scss";
 import { motion } from "framer-motion";
-import AnimatedLetters from "../components/AnimatedLetters";
 import Navigation from "../components/Navigation";
 
 // framer variants
@@ -34,6 +33,7 @@ const titleChild = {
   },
 };
 const IndexPage = () => {
+  const [showText, setShowText] = useState(false);
   return (
     <>
       <Navigation />
@@ -43,6 +43,21 @@ const IndexPage = () => {
             <motion.p variants={scroll} animate="animate" className="scroll">
               scroll
             </motion.p>
+          </div>
+          <div className="landing-animation--container">
+            <motion.div
+              animate={{ x: "100%" }}
+              transition={{ delay: 1, duration: 1 }}
+              className="landing-animation--line"
+            ></motion.div>
+            <motion.h1
+              animate={{ y: "100vh" }}
+              transition={{ delay: 2, duration: 0.4 }}
+              className="landing-animation--title"
+              onAnimationComplete={() => {}}
+            >
+              Reklama
+            </motion.h1>
           </div>
         </section>
         <section className="section">

@@ -20,11 +20,6 @@ body {
   grid-template-rows: repeat(12, 1fr);
   height: 100vh;
 }
-span {
-  display: inline-block;
-  // font-weight: 300;
-  // font-size: 2.2rem;
-}
 .span {
   font-weight: 300;
   font-size: 2.2rem;
@@ -74,6 +69,34 @@ span {
     grid-column: 9;
   }
 }
+// landing animation
+.landing-animation {
+  &--container {
+    display: flex;
+    overflow: hidden;
+    grid-column: 2/12;
+    grid-row: 3/11;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
+  &--line {
+    height: 3px;
+    grid-row: 7;
+    grid-column: 1/13;
+    background-color: $green;
+  }
+  &--title {
+    -webkit-text-stroke: 1px $green;
+    color: transparent;
+    text-align: center;
+    grid-row: 6;
+    margin: 0;
+    grid-column: 1/13;
+    font-size: 7rem;
+    line-height: 6rem;
+  }
+}
 .scroll {
   font-weight: 300;
   position: absolute;
@@ -82,21 +105,6 @@ span {
 }
 .hide {
   display: none;
-}
-.outline-heading {
-  font-size: 6.2rem;
-  -webkit-text-stroke: 0.1px $green;
-  color: transparent;
-  line-height: 6rem;
-  margin: 20px 0;
-  &--1 {
-    grid-column: 2/12;
-    grid-row: 5;
-  }
-  &--2 {
-    grid-row: 3;
-    grid-column: 2/12;
-  }
 }
 .title {
   &-container {
@@ -125,11 +133,5 @@ span {
   &--2 {
     grid-row: 4;
     grid-column: 2/12;
-  }
-}
-.space {
-  margin: 0 3px;
-  @media (min-width: $small) {
-    margin: 0 8px;
   }
 }
