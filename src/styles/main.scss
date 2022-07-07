@@ -24,17 +24,35 @@ body {
   font-weight: 300;
   font-size: 2.2rem;
 }
-
-.nav {
+a {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-decoration: none;
+  color: $white;
+}
+.header {
   background-color: $black;
   z-index: 100;
   position: fixed;
   top: 0;
-  height: 60px;
   width: 100%;
-  .links-container {
-    height: 57px;
+  &-items--container {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .toggle {
+    border: none;
+    background: none;
+    padding: 15px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    color: $white;
+    font-family: $font;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
   }
   .progress-bar {
     width: 0px;
@@ -42,7 +60,32 @@ body {
     background-color: $green;
   }
 }
-
+.nav {
+  &-mobile {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    z-index: 100;
+    &--close {
+      position: absolute;
+      right: 0;
+      border: none;
+      background: none;
+      padding: 15px;
+      margin: 0 15px;
+      text-transform: uppercase;
+      color: $black;
+      font-family: $font;
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 // GUIDING LINES
 .line {
   position: relative;
@@ -69,34 +112,6 @@ body {
     grid-column: 9;
   }
 }
-// landing animation
-.landing-animation {
-  &--container {
-    display: flex;
-    overflow: hidden;
-    grid-column: 2/12;
-    grid-row: 3/11;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-  }
-  &--line {
-    height: 3px;
-    grid-row: 7;
-    grid-column: 1/13;
-    background-color: $green;
-  }
-  &--title {
-    -webkit-text-stroke: 1px $green;
-    color: transparent;
-    text-align: center;
-    grid-row: 6;
-    margin: 0;
-    grid-column: 1/13;
-    font-size: 7rem;
-    line-height: 6rem;
-  }
-}
 .scroll {
   font-weight: 300;
   position: absolute;
@@ -115,13 +130,15 @@ body {
     color: transparent;
     display: flex;
     flex-direction: column;
-    &--1 {
-      grid-column: 2/12;
-      grid-row: 5;
-    }
     &--2 {
       grid-row: 3;
       grid-column: 2/12;
+    }
+    &--3 {
+      font-size: 7rem;
+      grid-row: 6;
+      grid-column: 1/13;
+      text-align: center;
     }
   }
 }

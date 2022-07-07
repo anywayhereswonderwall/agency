@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../styles/main.scss";
 import { motion } from "framer-motion";
-import Navigation from "../components/Navigation";
+import Header from "../components/Header";
+import NavMobile from "../components/NavMobile";
 
 // framer variants
 const scroll = {
@@ -33,32 +34,68 @@ const titleChild = {
   },
 };
 const IndexPage = () => {
-  const [showText, setShowText] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [animation2Complete, setAnimation2Complete] = useState(false);
+  const [nav, setNav] = useState(false);
+
   return (
     <>
-      <Navigation />
+      {animation2Complete && <Header setNav={setNav} />}
+      {nav && <NavMobile setNav={setNav} />}
       <main>
         <section className="section">
-          <div className="line line-2">
-            <motion.p variants={scroll} animate="animate" className="scroll">
-              scroll
-            </motion.p>
-          </div>
-          <div className="landing-animation--container">
+          {!animationComplete && (
             <motion.div
-              animate={{ x: "100%" }}
-              transition={{ delay: 1, duration: 1 }}
-              className="landing-animation--line"
-            ></motion.div>
-            <motion.h1
-              animate={{ y: "100vh" }}
-              transition={{ delay: 2, duration: 0.4 }}
-              className="landing-animation--title"
-              onAnimationComplete={() => {}}
+              viewport={{ once: true }}
+              variants={titleParent}
+              initial="initial"
+              whileInView="animate"
+              className="title-container title-container--3"
+              onAnimationComplete={() => setAnimationComplete(true)}
             >
-              Reklama
-            </motion.h1>
-          </div>
+              <motion.div variants={titleChild} className="title-line">
+                Reklama
+              </motion.div>
+              <motion.div variants={titleChild} className="title-line">
+                to za
+              </motion.div>
+              <motion.div variants={titleChild} className="title-line">
+                mało.
+              </motion.div>
+            </motion.div>
+          )}
+          {animationComplete && (
+            <motion.div
+              viewport={{ once: true }}
+              variants={titleParent}
+              initial="initial"
+              whileInView="animate"
+              className="title-container title-container--3"
+              onAnimationComplete={() => setAnimation2Complete(true)}
+            >
+              <motion.div variants={titleChild} className="title-line">
+                Chcesz
+              </motion.div>
+              <motion.div variants={titleChild} className="title-line">
+                wiedzieć
+              </motion.div>
+              <motion.div variants={titleChild} className="title-line">
+                czemu?
+              </motion.div>
+            </motion.div>
+          )}
+          {animationComplete && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="line line-2"
+            >
+              <motion.p variants={scroll} animate="animate" className="scroll">
+                scroll
+              </motion.p>
+            </motion.div>
+          )}
         </section>
         <section className="section">
           <div className="line line-3"></div>
@@ -70,13 +107,13 @@ const IndexPage = () => {
             className="title-container title-container--2"
           >
             <motion.div variants={titleChild} className="title-line">
-              Reklama
+              Czas
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              to za
+              przestać
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              mało.
+              nakłaniać.
             </motion.div>
           </motion.div>
           <div className="text-container text-container--2">
@@ -89,7 +126,7 @@ const IndexPage = () => {
             >
               W obecnych czasach każdy w bardzo łatwy i tani sposób jest w
               stanie pokazać się w internecie. Co za tym idzie, nakłanianie do
-              użycia twojego produktu staje się nieefektywne.
+              użycia Twojego produktu staje się nieefektywne.
             </motion.span>
           </div>
           <div className="line line-4"></div>
@@ -104,13 +141,13 @@ const IndexPage = () => {
             className="title-container title-container--2"
           >
             <motion.div variants={titleChild} className="title-line">
-              Reklama
+              Czas
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              to za
+              się
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              mało.
+              wyróżnić.
             </motion.div>
           </motion.div>
           <div className="text-container text-container--2">
@@ -121,9 +158,9 @@ const IndexPage = () => {
               transition={{ duration: 0.5, delay: 1 }}
               className="span"
             >
-              Aby ludzie chcieli korzystać z twoich usług, twój produkt musi być
+              Aby ludzie chcieli korzystać z Twoich usług, Twój produkt musi być
               naj. Najlepszy, najdokładniejszy, najszybszy… <br />
-              To unikalna cecha twojego produktu sprawi, że stanie się on
+              To unikalna cecha Twojego produktu sprawi, że stanie się on
               pożądany.
             </motion.span>
           </div>
@@ -143,13 +180,13 @@ const IndexPage = () => {
             className="title-container title-container--2"
           >
             <motion.div variants={titleChild} className="title-line">
-              Reklama
+              Czas
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              to za
+              przestać
             </motion.div>
             <motion.div variants={titleChild} className="title-line">
-              mało.
+              prosić.
             </motion.div>
           </motion.div>
           <div className="text-container text-container--2">
@@ -161,9 +198,9 @@ const IndexPage = () => {
               className="span"
             >
               Nikt nie jest w stanie stworzyć usługi dla wszystkich. Zamiast
-              prosić każdego, by wypróbował twój produkt, postaraj się zadbać o
+              prosić każdego, by wypróbował Twój produkt, postaraj się zadbać o
               grupę klientów, która będzie aktywnie uczestniczyć w działaniach
-              twojej firmy.
+              Twojej firmy.
             </motion.span>
           </div>
           <div className="line line-4"></div>
