@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../styles/main.scss";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
-import NavMobile from "../components/NavMobile";
+import Nav from "../components/Nav";
 
 // framer variants
 const scroll = {
@@ -37,15 +37,17 @@ const IndexPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [animation2Complete, setAnimation2Complete] = useState(false);
   const [nav, setNav] = useState(false);
-
   return (
     <>
       {animation2Complete && <Header setNav={setNav} />}
-      {nav && <NavMobile setNav={setNav} />}
+      <Nav setNav={setNav} nav={nav} />
       <main>
         <section className="section">
           {!animationComplete && (
             <motion.div
+              onAnimationStart={() =>
+                document.body.classList.add("overflow-hidden")
+              }
               viewport={{ once: true }}
               variants={titleParent}
               initial="initial"
@@ -71,7 +73,10 @@ const IndexPage = () => {
               initial="initial"
               whileInView="animate"
               className="title-container title-container--3"
-              onAnimationComplete={() => setAnimation2Complete(true)}
+              onAnimationComplete={() => {
+                setAnimation2Complete(true);
+                document.body.classList.remove("overflow-hidden");
+              }}
             >
               <motion.div variants={titleChild} className="title-line">
                 Chcesz
@@ -80,7 +85,7 @@ const IndexPage = () => {
                 wiedzieć
               </motion.div>
               <motion.div variants={titleChild} className="title-line">
-                czemu?
+                dlaczego?
               </motion.div>
             </motion.div>
           )}
@@ -121,7 +126,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="span"
             >
               W obecnych czasach każdy w bardzo łatwy i tani sposób jest w
@@ -155,7 +160,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="span"
             >
               Aby ludzie chcieli korzystać z Twoich usług, Twój produkt musi być
@@ -194,7 +199,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="span"
             >
               Nikt nie jest w stanie stworzyć usługi dla wszystkich. Zamiast

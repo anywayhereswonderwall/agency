@@ -9,11 +9,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $white;
+  color: $black;
   font-family: $font;
-  background-color: $black;
+  background-color: $white;
 }
-
+a {
+  text-decoration: none;
+}
 .section {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -24,14 +26,12 @@ body {
   font-weight: 300;
   font-size: 2.2rem;
 }
-a {
-  text-transform: uppercase;
-  font-size: 2rem;
-  text-decoration: none;
-  color: $white;
-}
+// a {
+//   text-decoration: none;
+//   co
+// }
 .header {
-  background-color: $black;
+  background-color: $white;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -48,7 +48,7 @@ a {
     padding: 15px;
     margin: 0 15px;
     text-transform: uppercase;
-    color: $white;
+    color: $black;
     font-family: $font;
     font-size: 2rem;
     font-weight: 300;
@@ -61,26 +61,38 @@ a {
   }
 }
 .nav {
-  &-mobile {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: $white;
-    z-index: 100;
-    &--close {
-      position: absolute;
-      right: 0;
-      border: none;
-      background: none;
-      padding: 15px;
-      margin: 0 15px;
-      text-transform: uppercase;
-      color: $black;
-      font-family: $font;
-      font-size: 2rem;
-      font-weight: 300;
-      font-style: italic;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-links {
+    color: $green;
+    font-size: 6rem;
+    text-align: center;
+    &--item {
+      font-size: 6.2rem;
+      -webkit-text-stroke: 2px $green;
+      color: transparent;
     }
+  }
+  &-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: none;
+    padding: 15px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    color: $black;
+    font-family: $font;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
   }
 }
 .overflow-hidden {
@@ -90,7 +102,7 @@ a {
 .line {
   position: relative;
   width: 1px;
-  background-color: $white;
+  background-color: $black;
   &-2 {
     grid-row: 11/13;
     grid-column: 9;
