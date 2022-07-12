@@ -51,7 +51,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               variants={titleParent}
               initial="initial"
-              whileInView="animate"
+              animate="animate"
               className="title-container title-container--3"
               onAnimationComplete={() => setAnimationComplete(true)}
             >
@@ -71,7 +71,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               variants={titleParent}
               initial="initial"
-              whileInView="animate"
+              animate="animate"
               className="title-container title-container--3"
               onAnimationComplete={() => {
                 setAnimation2Complete(true);
@@ -208,7 +208,24 @@ const IndexPage = () => {
               Twojej firmy.
             </motion.span>
           </div>
-          <div className="line line-4"></div>
+          <div className="line line-7"></div>
+        </section>
+        <section className="section">
+          <div className="line line-8"></div>
+          <motion.div
+            viewport={{ once: true }}
+            variants={titleParent}
+            initial="initial"
+            whileInView="animate"
+            className="title-container title-container--4"
+          >
+            <motion.div variants={titleChild} className="title-line">
+              Poznajmy
+            </motion.div>
+            <motion.div variants={titleChild} className="title-line">
+              {`się ;)`}
+            </motion.div>
+          </motion.div>
         </section>
       </main>
     </>

@@ -49,17 +49,29 @@ const Nav = ({ nav, setNav }) => {
             className="nav-links"
           >
             <motion.div variants={titleChild}>
-              <Link className="nav-links--item" to="/">
+              <Link
+                onClick={() => setNav(false)}
+                className="nav-links--item"
+                to="/"
+              >
                 Wizja
               </Link>
             </motion.div>
             <motion.div variants={titleChild}>
-              <Link className="nav-links--item" to="/">
+              <Link
+                onClick={() => setNav(false)}
+                className="nav-links--item"
+                to="/kontakt"
+              >
                 Kontakt
               </Link>
             </motion.div>
             <motion.div variants={titleChild}>
-              <Link className="nav-links--item" to="/">
+              <Link
+                onClick={() => setNav(false)}
+                className="nav-links--item"
+                to="/onas"
+              >
                 O nas
               </Link>
             </motion.div>

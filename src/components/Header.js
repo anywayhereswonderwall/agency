@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { Link } from "gatsby";
-import menuIcon from "../images/menuIcon.svg";
 
 const Navigation = ({ setNav }) => {
   const [currentPercent, setCurrentPercent] = useState(null);
@@ -23,7 +22,6 @@ const Navigation = ({ setNav }) => {
       <div className="header-items--container">
         <div className="social-container"></div>
         <button onClick={() => setNav(true)} className="toggle">
-          {/* <img src={menuIcon} alt="ikonka menu" /> */}
           menu
         </button>
       </div>
