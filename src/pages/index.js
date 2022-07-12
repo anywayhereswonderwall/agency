@@ -143,7 +143,7 @@ const IndexPage = () => {
             variants={titleParent}
             initial="initial"
             whileInView="animate"
-            className="title-container title-container--2"
+            className="title-container title-container--1"
           >
             <motion.div variants={titleChild} className="title-line">
               Czas
@@ -155,7 +155,7 @@ const IndexPage = () => {
               wyróżnić.
             </motion.div>
           </motion.div>
-          <div className="text-container text-container--2">
+          <div className="text-container text-container--1">
             <motion.span
               viewport={{ once: true }}
               initial={{ opacity: 0 }}
@@ -210,14 +210,13 @@ const IndexPage = () => {
           </div>
           <div className="line line-7"></div>
         </section>
-        <section className="section">
-          <div className="line line-8"></div>
+        <footer className="section footer">
           <motion.div
             viewport={{ once: true }}
             variants={titleParent}
             initial="initial"
             whileInView="animate"
-            className="title-container title-container--4"
+            className="title-container title-container--4 title-container--footer"
           >
             <motion.div variants={titleChild} className="title-line">
               Poznajmy
@@ -226,7 +225,30 @@ const IndexPage = () => {
               {`się ;)`}
             </motion.div>
           </motion.div>
-        </section>
+          <div className="footer-links">
+            <div className="footer-links--item footer-links--item1">
+              <div className="item-text">
+                <p>
+                  +69 420 213 769 <br></br>
+                  jebanie@gmail
+                </p>
+              </div>
+              <div className="item-title">kontakt</div>
+            </div>
+            <div className="footer-links--item footer-links--item2">
+              <div className="item-text">
+                <p>Zobacz co możemy dla Ciebie zrobić.</p>
+              </div>
+              <div className="item-title">oferta</div>
+            </div>
+            <div className="footer-links--item footer-links--item3">
+              <div className="item-text">
+                <p>Poznaj nasz zespół.</p>
+              </div>
+              <div className="item-title">o nas</div>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );

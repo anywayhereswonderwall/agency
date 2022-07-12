@@ -58,7 +58,7 @@ a {
   .progress-bar {
     width: 0px;
     height: 3px;
-    background-color: $green;
+    background-color: $black;
   }
 }
 .nav {
@@ -71,12 +71,12 @@ a {
   align-items: center;
   justify-content: center;
   &-links {
-    color: $green;
+    color: $black;
     font-size: 6rem;
     text-align: center;
     &--item {
       font-size: 6.2rem;
-      -webkit-text-stroke: 2px $green;
+      -webkit-text-stroke: 2px $black;
       color: transparent;
     }
   }
@@ -148,19 +148,39 @@ a {
     margin: 10px 0;
     line-height: 6rem;
     font-size: 6.2rem;
-    -webkit-text-stroke: 2px $green;
-    color: transparent;
+    // -webkit-text-stroke: 2px $black;
+    // color: transparent;
+    color: $black;
     display: flex;
     flex-direction: column;
+    @media (min-width: $small) {
+      font-size: 8rem;
+      line-height: 7rem;
+      margin: 20px 0;
+    }
+    &--1 {
+      grid-row: 3;
+      grid-column: 2/12;
+      @media (min-width: $small) {
+        grid-column: 3/6;
+      }
+    }
     &--2 {
       grid-row: 3;
       grid-column: 2/12;
+      @media (min-width: $small) {
+        grid-column: 8/13;
+      }
     }
     &--3 {
       font-size: 7rem;
       grid-row: 6;
       grid-column: 1/13;
       text-align: center;
+      @media (min-width: $small) {
+        font-size: 12rem;
+        line-height: 12rem;
+      }
     }
     &--4 {
       text-align: center;
@@ -169,15 +189,79 @@ a {
       grid-row: 3;
       grid-column: 1/13;
     }
+    &--footer {
+      -webkit-text-stroke: 2px $white;
+    }
+  }
+}
+.footer {
+  background-color: $black;
+  &-line {
+    background-color: $white;
+  }
+  &-links {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column: 1/13;
+    grid-row: 5/13;
+    .item-text {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 300;
+      p {
+        margin: 2rem;
+      }
+    }
+    .item-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      height: 100%;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+    &--item {
+      color: $white;
+      border-top: 1px solid $white;
+      display: flex;
+      cursor: pointer;
+      &:hover {
+        color: $black;
+        background-color: $white;
+      }
+    }
+    &--item1 {
+      grid-column: 1/13;
+      grid-row: 1/5;
+    }
+    &--item2 {
+      grid-column: 1/13;
+      grid-row: 5/9;
+    }
+    &--item3 {
+      grid-column: 1/13;
+      grid-row: 9/13;
+    }
   }
 }
 .text-container {
   &--1 {
-    grid-row: 6;
+    grid-row: 4;
     grid-column: 2/12;
+    @media (min-width: $small) {
+      grid-column: 3/7;
+    }
   }
   &--2 {
     grid-row: 4;
     grid-column: 2/12;
+    @media (min-width: $small) {
+      grid-column: 8/12;
+    }
   }
 }

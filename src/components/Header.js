@@ -13,24 +13,28 @@ const Navigation = ({ setNav }) => {
       }),
     [yRange]
   );
-  return (
-    <motion.header
-      initial={{ y: "-100%" }}
-      animate={{ y: 0 }}
-      className="header"
-    >
-      <div className="header-items--container">
-        <div className="social-container"></div>
-        <button onClick={() => setNav(true)} className="toggle">
-          menu
-        </button>
-      </div>
-      <motion.div
-        style={{ width: `${currentPercent}%` }}
-        className="progress-bar"
-      ></motion.div>
-    </motion.header>
-  );
+  if (currentPercent < 98) {
+    return (
+      <motion.header
+        initial={{ y: "-100%" }}
+        animate={{ y: 0 }}
+        className="header"
+      >
+        <div className="header-items--container">
+          <div className="social-container"></div>
+          <button onClick={() => setNav(true)} className="toggle">
+            menu
+          </button>
+        </div>
+        <motion.div
+          style={{ width: `${currentPercent}%` }}
+          className="progress-bar"
+        ></motion.div>
+      </motion.header>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default Navigation;
