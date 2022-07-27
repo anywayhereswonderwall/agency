@@ -70,6 +70,15 @@ const Nav = ({ nav, setNav }) => {
               <Link
                 onClick={() => setNav(false)}
                 className="nav-links--item"
+                to="/oferta"
+              >
+                Oferta
+              </Link>
+            </motion.div>
+            <motion.div variants={titleChild}>
+              <Link
+                onClick={() => setNav(false)}
+                className="nav-links--item"
                 to="/onas"
               >
                 O nas
