@@ -3,6 +3,9 @@ import "../styles/main.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
+import AnimatedCube from "../components/AnimatedCube";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 // framer variants
 const scroll = {
@@ -37,6 +40,19 @@ const IndexPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [animation2Complete, setAnimation2Complete] = useState(false);
   const [nav, setNav] = useState(false);
+  const [sectionDimensions, setSectionDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  const sectionRef = useRef(null);
+  const sectionResize = () => {};
+  useEffect(() => {
+    if (sectionRef.current) {
+      let parentHeight = sectionRef.current.offsetHeight;
+      let parentWidth = sectionRef.current.offsetWidth;
+      console.log(1);
+    }
+  }, [sectionRef]);
   return (
     <>
       {animation2Complete && <Header setNav={setNav} />}
@@ -136,7 +152,7 @@ const IndexPage = () => {
           </div>
           <div className="line line-4"></div>
         </section>
-        <section className="section">
+        <section ref={sectionRef} className="section">
           <div className="line line-5"></div>
           <motion.div
             viewport={{ once: true }}
@@ -155,6 +171,7 @@ const IndexPage = () => {
               wyróżnić.
             </motion.div>
           </motion.div>
+          <AnimatedCube></AnimatedCube>
           <div className="text-container text-container--1">
             <motion.span
               viewport={{ once: true }}
