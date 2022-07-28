@@ -1,10 +1,8 @@
 import React from "react";
 import { useRef } from "react";
 import { useAnimationFrame, motion } from "framer-motion";
-
 const AnimatedCube = () => {
   const ref = useRef(null);
-
   useAnimationFrame((t) => {
     const rotate = Math.sin(t / 10000) * 200;
     const y = (1 + Math.sin(t / 1000)) * -50;
@@ -12,8 +10,8 @@ const AnimatedCube = () => {
   });
   return (
     <motion.div
-      drag
-      dragConstraints={{ left: 50, right: 50, top: 50, bottom: 50 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="cube-container"
     >
       <div className="cube" ref={ref}>
