@@ -5,34 +5,43 @@ const banner = {
   animate: {
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 const letterAnimation = {
-  initial: { y: 800 },
+  initial: { y: 400 },
   animate: {
     y: 0,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 0.2,
+      duration: 0.5,
     },
   },
 };
+
 const AnimatedLetters = ({ title }) => {
-  let id = 0;
   return (
-    <motion.span variants={banner} initial="initial" animate="animate">
+    <motion.span
+      variants={banner}
+      initial="initial"
+      animate="animate"
+      className="row-title"
+    >
       {[...title].map((letter) => {
-        id++;
         if (letter === " ") {
-          return <br />;
-        } else {
           return (
-            <motion.span key={id} variants={letterAnimation}>
-              {letter}
-            </motion.span>
+            <motion.span
+              className="row-letter row-letter--space"
+              variants={letterAnimation}
+            ></motion.span>
           );
         }
+        return (
+          <motion.span className="row-letter" variants={letterAnimation}>
+            {letter}
+          </motion.span>
+        );
       })}
     </motion.span>
   );

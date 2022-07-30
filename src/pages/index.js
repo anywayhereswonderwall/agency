@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import AnimatedCube from "../components/AnimatedCube";
-import { useEffect } from "react";
+import { Link } from "gatsby";
+import Footer from "../components/Footer";
 
 // framer variants
 const scroll = {
@@ -214,46 +215,8 @@ const IndexPage = () => {
           </div>
           <div className="line line-7"></div>
         </section>
-        <footer className="section footer">
-          <motion.div
-            viewport={{ once: true }}
-            variants={titleParent}
-            initial="initial"
-            whileInView="animate"
-            className="title-container title-container--4 title-container--footer"
-          >
-            <motion.div variants={titleChild} className="title-line">
-              Poznajmy
-            </motion.div>
-            <motion.div variants={titleChild} className="title-line">
-              {`się ;)`}
-            </motion.div>
-          </motion.div>
-          <div className="footer-links">
-            <div className="footer-links--item footer-links--item1">
-              <div className="item-text">
-                <p>
-                  +69 420 213 769 <br></br>
-                  jebanie@gmail
-                </p>
-              </div>
-              <div className="item-title">kontakt</div>
-            </div>
-            <div className="footer-links--item footer-links--item2">
-              <div className="item-text">
-                <p>Zobacz co możemy dla Ciebie zrobić.</p>
-              </div>
-              <div className="item-title">oferta</div>
-            </div>
-            <div className="footer-links--item footer-links--item3">
-              <div className="item-text">
-                <p>Poznaj nasz zespół.</p>
-              </div>
-              <div className="item-title">o nas</div>
-            </div>
-          </div>
-        </footer>
       </main>
+      <Footer />
     </>
   );
 };

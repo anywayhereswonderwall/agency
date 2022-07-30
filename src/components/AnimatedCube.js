@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useAnimationFrame, motion } from "framer-motion";
-const AnimatedCube = () => {
+const AnimatedCube = ({ addClass }) => {
   const ref = useRef(null);
   useAnimationFrame((t) => {
     const rotate = Math.sin(t / 10000) * 200;
@@ -12,7 +12,7 @@ const AnimatedCube = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="cube-container"
+      className={`cube-container ${addClass}`}
     >
       <div className="cube" ref={ref}>
         <div className="side front" />

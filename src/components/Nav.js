@@ -61,15 +61,6 @@ const Nav = ({ nav, setNav }) => {
               <Link
                 onClick={() => setNav(false)}
                 className="nav-links--item"
-                to="/kontakt"
-              >
-                Kontakt
-              </Link>
-            </motion.div>
-            <motion.div variants={titleChild}>
-              <Link
-                onClick={() => setNav(false)}
-                className="nav-links--item"
                 to="/oferta"
               >
                 Oferta
@@ -81,7 +72,16 @@ const Nav = ({ nav, setNav }) => {
                 className="nav-links--item"
                 to="/onas"
               >
-                O nas
+                O <span className="about-span">nas</span> Tobie
+              </Link>
+            </motion.div>
+            <motion.div variants={titleChild}>
+              <Link
+                onClick={() => setNav(false)}
+                className="nav-links--item"
+                to="/kontakt"
+              >
+                Kontakt
               </Link>
             </motion.div>
           </motion.div>

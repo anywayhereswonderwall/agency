@@ -1,0 +1,45 @@
+$move-initial: calc(0);
+$move-final: calc(-25%);
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  .marquee-inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    transform: translate3d($move-initial, 0, 0);
+    animation: marquee 5s linear infinite;
+    @media (min-width: $large) {
+      transform: translate3d(calc(-25% + 10vw), 0, 0);
+      animation: marquee-lg 5s linear infinite;
+    }
+  }
+  .row-title {
+    padding: 0 8vw;
+    @media (min-width: $large) {
+      padding: 0 10vw;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d($move-initial, 0, 0);
+  }
+
+  100% {
+    transform: translate3d($move-final, 0, 0);
+  }
+}
+
+@keyframes marquee-lg {
+  0% {
+    transform: translate3d(calc(-25% + 10vw), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50% + 10vw), 0, 0);
+  }
+}
